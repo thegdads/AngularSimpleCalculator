@@ -1,6 +1,6 @@
 <div class="container">
   <div class="calculation" [innerHTML]="temp"></div>
-  <div class="result">13</div>
+  <div class="result" [innerHTML]="hasil"></div>
   <div class="row mt-2">
     <div class="col-8">
       <div class="row no-gutters">
@@ -23,7 +23,7 @@
       <div class="col-12 text-center custButton" (click)="addToTemp('-')">-</div>
       <div class="col-12 text-center custButton" (click)="addToTemp('/')">/</div>
       <div class="col-12 text-center custButton" (click)="addToTemp('*')">*</div>
-      <div class="col-12 text-center custButton">=</div>
+      <div class="col-12 text-center custButton" (click)="onresult()">=</div>
     </div>
   </div>
 </div>
