@@ -1,0 +1,57 @@
+.calculation {
+  height: 60px;
+  border-top: solid 1px grey;
+  border-left: solid 1px grey;
+  border-right: solid 1px grey;
+  border-bottom: 0;
+  font-size: 30px;
+  text-align: right;
+  padding: .4em;
+}
+
+.result {
+  height: 80px;
+  border-top: 0;
+  border-left: solid 1px grey;
+  border-right: solid 1px grey;
+  border-bottom: solid 1px grey;
+  font-size: 40px;
+  text-align: right;
+  padding: .2em;
+  font-weight: bold;
+}
+
+.custButton {
+  border: solid 1px grey;
+  height: 100px;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+}
+
+.custButton:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+// .button {
+//   display: inline;
+// }
+
+// .button .buttonNumber {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
+// .button .buttonNumber div {
+//   border: solid 1px grey;
+//   margin: 20px;
+//   width: 100px;
+
+// }
+
+// .button .buttonOperator {
+//   width: ;
+// }
