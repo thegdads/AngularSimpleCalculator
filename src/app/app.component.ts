@@ -15,10 +15,8 @@ export class AppComponent implements OnInit{
   hasil:number ;
   cek:boolean;
 
-  // this.cek = false; 
-
   ngOnInit() {
-    fromEvent(document, 'keypress').subscribe(event => {
+    fromEvent(document, 'keypress').subscribe((event:any) => {
       if('1234567890+-/*'.indexOf(event.key)>-1) {
         this.addToTemp(event.key);
       }
@@ -33,14 +31,14 @@ export class AppComponent implements OnInit{
     const copr = ['+','-','/','*'];
     if (copr.indexOf(val) > -1){
       this.nil1 = parseInt(this.temp);
-      this.opr = val;  
-      this.cek = true;    
+      this.opr = val;
+      this.cek = true;
     }
     if (this.cek == true){
       if (copr.indexOf(val) > -1){
         val='';
         this.temp2 ='';
-      } 
+      }
       this.temp2 = this.temp2 + val;
       this.nil2 = parseInt(this.temp2);
     }
@@ -55,11 +53,6 @@ export class AppComponent implements OnInit{
   }
 
   onresult(){
-
-    console.log(this.opr);
-    console.log(this.nil1);
-    console.log(this.nil2);
-    
     switch (this.opr) {
       case '+':
         this.hasil = this.nil1 + this.nil2;
