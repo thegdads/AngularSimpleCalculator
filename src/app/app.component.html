@@ -1,6 +1,6 @@
 <div class="container">
   <div class="calculation" [innerHTML]="temp"></div>
-  <div class="result" [innerHTML]="hasil"></div>
+  <!-- <div class="result" [innerHTML]="hasil"></div> -->
   <div class="row mt-2">
     <div class="col-8">
       <div class="row no-gutters">
@@ -16,14 +16,16 @@
         <div class="col text-center custButton" (click)="addToTemp('0')">0</div>
         <div class="col-4 text-center custButton" (click)="addToTemp('.')">.</div>
       </div>
+      <div class="row no-gutters">
+        <div class="col-4 text-center clear" (click)="onclear()">Clear</div>
+        <div class="col-8 text-center custButton" (click)="onresult()">=</div>
+      </div>  
     </div>
     <div class="col-4">
-      <div class="clear" (click)="onclear()">Clear</div>
       <div class="col-12 text-center custButton" (click)="addToTemp('+')">+</div>
       <div class="col-12 text-center custButton" (click)="addToTemp('-')">-</div>
       <div class="col-12 text-center custButton" (click)="addToTemp('/')">/</div>
-      <div class="col-12 text-center custButton" (click)="addToTemp('*')">*</div>
-      <div class="col-12 text-center custButton" (click)="onresult()">=</div>
+      <div class="col-12 text-center custButton" (click)="addToTemp('*')">*</div> 
     </div>
   </div>
 </div>

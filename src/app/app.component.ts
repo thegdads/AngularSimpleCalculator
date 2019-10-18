@@ -46,7 +46,6 @@ export class AppComponent {
   }
 
   onresult(){
-
     console.log(this.opr);
     console.log(this.nil1);
     console.log(this.nil2);
@@ -65,5 +64,7 @@ export class AppComponent {
         this.hasil = this.nil1 / this.nil2 ;
         break;
     }
+    this.temp = this.hasil.toString();
+
   }
 }
