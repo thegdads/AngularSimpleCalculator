@@ -71,5 +71,6 @@ export class AppComponent implements OnInit{
         this.hasil = this.nil1 / this.nil2 ;
         break;
     }
+    this.temp = this.hasil.toString();
   }
 }
