@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   temp:string = '';
   temp2:string = '';
   nil1:number;
@@ -14,7 +15,17 @@ export class AppComponent {
   hasil:number ;
   cek:boolean;
 
-  // this.cek = false; 
+  ngOnInit() {
+    fromEvent(document, 'keypress').subscribe((event:any) => {
+      if('1234567890+-/*'.indexOf(event.key)>-1) {
+        this.addToTemp(event.key);
+      }else if(event.key==='Enter') {
+        this.onresult();
+      }else if(event.key==='Delete') {
+        this.onclear();
+      }
+    });
+  }
 
   addToTemp(val) {
    if (this.temp.substring(0,1)=='0'){
@@ -24,14 +35,14 @@ export class AppComponent {
     const copr = ['+','-','/','*'];
     if (copr.indexOf(val) > -1){
       this.nil1 = parseInt(this.temp);
-      this.opr = val;  
-      this.cek = true;    
+      this.opr = val;
+      this.cek = true;
     }
     if (this.cek == true){
       if (copr.indexOf(val) > -1){
         val='';
         this.temp2 ='';
-      } 
+      }
       this.temp2 = this.temp2 + val;
       this.nil2 = parseInt(this.temp2);
     }
@@ -46,10 +57,6 @@ export class AppComponent {
   }
 
   onresult(){
-    console.log(this.opr);
-    console.log(this.nil1);
-    console.log(this.nil2);
-    
     switch (this.opr) {
       case '+':
         this.hasil = this.nil1 + this.nil2;
@@ -65,6 +72,5 @@ export class AppComponent {
         break;
     }
     this.temp = this.hasil.toString();
-
   }
 }
